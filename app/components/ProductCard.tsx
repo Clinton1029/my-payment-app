@@ -1,29 +1,37 @@
 "use client";
 
-// This component represents a single product card with a Buy Now button.
-// We will later connect the Buy button to a payment gateway like Stripe.
-
-import React from "react";
+import Image from "next/image";
 
 export default function ProductCard() {
   return (
-    <div className="w-full max-w-sm bg-neutral-900 border border-neutral-800 rounded-xl p-6 shadow-lg flex flex-col items-center text-center">
-      {/* Product Image (Temporary Placeholder) */}
-      <div className="w-32 h-32 bg-neutral-800 rounded-lg mb-4"></div>
+    <div className="w-full max-w-sm bg-white/10 backdrop-blur-lg border border-white/20 rounded-xl p-5 flex flex-col items-center shadow-xl hover:shadow-2xl transition-shadow duration-300">
+      
+      {/* Product Image */}
+      <div className="w-full h-48 relative rounded-lg overflow-hidden mb-4">
+        <Image
+          src="https://images.unsplash.com/photo-1511379922014-9cb63e57ea1c" 
+          alt="Premium Headphones"
+          fill
+          className="object-cover"
+        />
+      </div>
 
       {/* Product Title */}
-      <h2 className="text-xl font-semibold mb-2">Premium Product</h2>
+      <h2 className="text-2xl font-semibold mb-2">Premium Wireless Headphones</h2>
 
-      {/* Product Description */}
-      <p className="text-neutral-400 text-sm mb-4">
-        Get access to our premium product with full features.
+      {/* Description */}
+      <p className="text-gray-300 text-sm mb-4 text-center">
+        Crystal-clear sound, luxury comfort, and long-lasting battery life.
       </p>
 
-      {/* Product Price */}
-      <p className="text-2xl font-bold mb-6">$19.99</p>
+      {/* Price */}
+      <p className="text-xl font-bold mb-5">$149.99</p>
 
-      {/* Buy Button */}
-      <button className="w-full py-2 bg-blue-600 hover:bg-blue-500 rounded-lg transition">
+      {/* Button */}
+      <button
+        className="w-full py-3 rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 hover:opacity-90 transition-all font-medium"
+        onClick={() => alert("Prepare Stripe flow here")}
+      >
         Buy Now
       </button>
     </div>
