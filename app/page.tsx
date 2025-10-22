@@ -1,6 +1,4 @@
-// app/page.tsx
-// This is the home page, which renders our ProductCard in the center of the screen.
-
+"use client"
 import ProductCard from "./components/ProductCard";
 
 export default function HomePage() {
